@@ -32,8 +32,7 @@
 
     <!-- Normalize Styles -->
     <link href="assets/css/normalize.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Extras -->
     <link rel="stylesheet" type="text/css" href="assets/extras/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/extras/lightbox.css">
@@ -338,24 +337,10 @@
 <div>
 <script>
 	console.log("a")
-$.ajax({
-  url: "https://geolocation-db.com/jsonp",
-  jsonpCallback: "callback",
-  dataType: "jsonp",
-  type: "get",
-  success: function (location) {
-    $("#kota").text(location.city);
-  },
-});
-$("#kota").change(function (e) {
-	  $.get(
-    "https://raw.githubusercontent.com/lakuapik/jadwalsholatorg/master/kota.json",
-    function (data, status) {
-      if (!data.includes($("#kota").val().toLowerCase()))
-        return $(".sholat").text("Error loading");
-    }
-  );
-});
+	$.get( "https://myip.wtf/json", function( data ) {
+		const location =  data 
+    $("#kota").text(location.YourFuckingCity);
+  })
 var kotaTextContent = $("#kota").text();
 $("#kota").on("DOMSubtreeModified", function (evt) {
   if (evt.target.textContent !== kotaTextContent) {
@@ -363,21 +348,17 @@ $("#kota").on("DOMSubtreeModified", function (evt) {
     $.get(
       "https://raw.githubusercontent.com/lakuapik/jadwalsholatorg/master/kota.json",
       function (data, status) {
-		$.get(
-      "https://raw.githubusercontent.com/lakuapik/jadwalsholatorg/master/kota.json",
-      function (data1, status) {
-		let data = $.parseJSON(data1)
-        if (!data.includes(kotaTextContent.toLowerCase()) && kotaTextContent !== "jakarta")
+		let dataC = $.parseJSON(data)
+        if (!dataC.includes(kotaTextContent.toLowerCase()) && kotaTextContent !== "jakarta")
           return $(".sholat").text(
             "Failed to fetch data (Maybe your city is not in the list?)"
           );
-      })
         const date = new Date();
         if(kotaTextContent
         .toString()
         .toLowerCase() === "jakarta") kotaTextContent = "jakartaselatan"
         $.get(
-          `https://raw.githubusercontent.com/lakuapik/jadwalsholatorg/master/adzan/${kotaTextContent}/${date.getFullYear()}/${date.getMonth() + 1}.json`,
+          `https://raw.githubusercontent.com/lakuapik/jadwalsholatorg/master/adzan/${kotaTextContent.toLowerCase()}/${date.getFullYear()}/${date.getMonth() + 1}.json`,
           function (dasta, status) {
 			const datasv = $.parseJSON(dasta)
 			const datas = datasv[date.getDate() - 1]
