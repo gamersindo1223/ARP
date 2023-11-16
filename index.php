@@ -336,10 +336,13 @@
 	</body>
 </html>
 <div>
-<script>$.ajax({
+<script>
+	console.log("a")
+$.ajax({
   url: "https://geolocation-db.com/jsonp",
   jsonpCallback: "callback",
   dataType: "jsonp",
+  type: "get",
   success: function (location) {
     $("#kota").text(location.city);
   },

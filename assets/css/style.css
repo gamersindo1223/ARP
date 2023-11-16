@@ -192,32 +192,32 @@ img {
   padding: 12px 30px;
   margin-top: 30px;
 }
-#services {
+.services {
   background: #ffffff;
   padding-bottom: 50px;
 }
-#services .service-box {
+.services .service-box {
   position: relative;
   border: 1px solid #0BAFA0;
   margin-bottom: 48px;
 }
-#services .content {
+.services .content {
   color: #ffffff;
   text-align: center;
   background: #0BAFA0;
   border: 4px solid #ffffff;
   padding: 10px 14px;
 }
-#services .content h2 {
+.services .content h2 {
   font-size: 20px;
   font-weight: 300;
   text-transform: uppercase;
 }
-#services .content p {
+.services .content p {
   line-height: 22px;
   font-weight: 300;
 }
-#services .icon-wrapper {
+.services .icon-wrapper {
   background: #ffffff;
   border-radius: 50%;
   height: 54px;
@@ -227,7 +227,7 @@ img {
   top: -30px;
   width: 54px;
 }
-#services .icon-wrapper i {
+.services .icon-wrapper i {
   background: #ffffff;
   color: #0BAFA0;
   border: 2px solid #0BAFA0;
@@ -241,7 +241,7 @@ img {
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-#services .service-box:hover i {
+.services .service-box:hover i {
   background: #0BAFA0;
   color: #fff;
 }

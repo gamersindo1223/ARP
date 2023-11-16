@@ -38,17 +38,17 @@ a:hover {
   color: #e74c3c;
 }
 /* Services color */
-#services .service-box{
+.services .service-box{
 	border: 1px solid #e74c3c;
 }
-#services .content{
+.services .content{
 	background: #e74c3c;
 }
-#services .icon-wrapper i{
+.services .icon-wrapper i{
 	color: #e74c3c;
 	border: 2px solid #e74c3c;
 }
-#services .service-box:hover i {
+.services .service-box:hover i {
   background: #e74c3c;
 }
 /* Portfolio color */
