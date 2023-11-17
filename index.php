@@ -349,13 +349,13 @@ $("#kota").on("DOMSubtreeModified", function (evt) {
       "https://raw.githubusercontent.com/lakuapik/jadwalsholatorg/master/kota.json",
       function (data, status) {
 		let dataC = $.parseJSON(data)
-        if (!dataC.includes(kotaTextContent.toLowerCase()) && kotaTextContent !== "jakarta")
+        if (!dataC.includes(kotaTextContent.toLowerCase()) && (kotaTextContent.split(" ")[0].toLowerCase() !== "jakarta"))
           return $(".sholat").text(
             "Failed to fetch data (Maybe your city is not in the list?)"
           );
         const date = new Date();
         if(kotaTextContent
-        .toString()
+        .split(" ")[0].toString()
         .toLowerCase() === "jakarta") kotaTextContent = "jakartaselatan"
         $.get(
           `https://raw.githubusercontent.com/lakuapik/jadwalsholatorg/master/adzan/${kotaTextContent.toLowerCase()}/${date.getFullYear()}/${date.getMonth() + 1}.json`,
